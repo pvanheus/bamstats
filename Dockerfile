@@ -6,7 +6,7 @@
 FROM ubuntu:14.04
 
 # File Author / Maintainer
-MAINTAINER Brian OConnor 
+MAINTAINER Peter van Heusden <pvh@sanbi.ac.za>
 
 # Setup packages
 USER root
@@ -17,7 +17,7 @@ RUN wget -q http://downloads.sourceforge.net/project/bamstats/BAMStats-1.25.zip
 RUN unzip BAMStats-1.25.zip && \
     rm BAMStats-1.25.zip && \
     mv BAMStats-1.25 /opt/
-COPY bin/bamstats /usr/local/bin/
+COPY bin/bamstats /usr/local/bin
 RUN chmod a+x /usr/local/bin/bamstats
 
 # switch back to the ubuntu user so this tool (and the files written) are not owned by root
